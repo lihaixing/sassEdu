@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,gBAAgB;AAEhB,EAAE;EACA,KAAK,EAAC,GAAG;EACT,gBAAgB,EAAC,IAAI;;;AAMrB,YAAO;EACL,KAAK,EAAC,GAAG;;AAEX,WAAM;EACJ,KAAK,EAPF,GAAG;EAQN,SAAS,EAAC,IAAI;;;AAQlB,SAAM;EACJ,OAAO,EAAC,GAAG;EACX,MAAM,EAAC,IAAI",
+"sources": ["../sass/1.sass%20scss%20tylus%20less%20deference/1.scss"],
+"names": [],
+"file": "1.css"
+}

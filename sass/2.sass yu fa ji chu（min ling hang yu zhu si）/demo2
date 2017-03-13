@@ -1,0 +1,16 @@
+1.进入cmd环境
+    在目录中输入cmd回车
+2.创建sass
+    在cmd中输入compass create sassAPP
+3.单文件转换命令
+    sass style.scss style.css
+4.单文件监听命令
+    sass --watch style.scss:style.css
+5.文件夹监听命令
+    sass --watch sassFileDirectory:cssFileDirectory
+6.compass编译
+    compass compile
+    compass compile --force
+7.compass监视
+    compass watch
+    compass watch --force

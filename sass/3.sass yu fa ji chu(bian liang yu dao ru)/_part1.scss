@@ -1,0 +1,11 @@
+@charset "utf-8";
+//_part1为部分文件，不会产生css,主要用来导入
+.left{
+  float:left;
+}
+.right{
+  float:right;
+}
+.clear{
+  clear:both;
+}

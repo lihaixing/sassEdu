@@ -1,0 +1,71 @@
+.body {
+  font-size: 14px;
+}
+
+.container {
+  font-size: 14px;
+}
+
+body {
+  color: red;
+}
+
+body {
+  color: rgba(255, 255, 0, 0.5);
+}
+
+body {
+  width: 25px;
+}
+body .header {
+  width: -1px;
+}
+
+a:before {
+  content: "Abc";
+}
+
+a:before {
+  content: Abc;
+}
+
+p {
+  padding: 7px auto;
+}
+
+p:before {
+  content: "hello,sass 3";
+}
+
+p {
+  font-size: 20px/10px;
+  font-size: 2;
+  width: 6.5px;
+  height: 6.5px;
+}
+
+body {
+  color: red;
+  font-size: 18px;
+  color: green;
+  color: green;
+  font-size: 20px;
+}
+
+p {
+  color: green;
+  font-size: good;
+}
+
+body {
+  -webkit-box-shadow: 2px 2px 0px blue, -2px -2px 0px green;
+  -moz-box-shadow: 2px 2px 0px blue, -2px -2px 0px green;
+  box-shadow: 2px 2px 0px blue, -2px -2px 0px green;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 240px) {
+  font-size: 24px;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=5.css.map */

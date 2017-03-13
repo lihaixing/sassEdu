@@ -1,0 +1,87 @@
+@charset "UTF-8";
+body {
+  background-color: red;
+}
+body header {
+  background-color: green;
+}
+body footer {
+  background-color: red;
+  background-size: 100% 50%;
+}
+body a {
+  color: red;
+  /*默认@at-root只会跳出选择器嵌套，而不能跳出@media或@support，
+  如果要跳出这两种，则需使用@at-root (without: media)，@at-root (without: support)。
+  这个语法的关键词有四个：
+  all（表示所有），rule（表示常规css），media（表示media），support（表示support，
+  因为@support目前还无法广泛使用，所以在此不表）。我们默认的@at-root其实就是@at-root (without:rule)。*/
+}
+body a:active {
+  color: green;
+}
+body a:hover {
+  color: blue;
+}
+body a .contain {
+  background-color: yellow;
+}
+body a.contain {
+  background-color: yellow;
+}
+.container {
+  width: 1100px;
+}
+body .container {
+  background-color: green;
+}
+
+.container {
+  background-color: green;
+}
+
+.text-info {
+  color: red;
+}
+nav .text-info {
+  color: blue;
+}
+
+.alert, .alert-info {
+  background-color: #FED;
+}
+
+.small, .alert-info {
+  font-size: 12px;
+}
+
+.alert-info {
+  color: red;
+}
+
+.one, .two, .three {
+  border: solid 1px red;
+}
+
+.two, .three {
+  color: blue;
+}
+
+.three {
+  border-radius: 5px;
+}
+
+a span, a div .content, div a .content {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .four, .five {
+    color: red;
+  }
+}
+.alert-danger {
+  color: green;
+}
+
+/*# sourceMappingURL=4.css.map */

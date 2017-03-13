@@ -1,0 +1,117 @@
+@charset "utf-8";
+//选择器嵌套
+body{
+  background-color:red;
+  header{
+    background-color:green;
+  }
+  //属性嵌套
+  footer{
+    background:{
+      color:red;
+      size:100% 50%;
+    }
+  }
+  //引用父选择器
+  a{
+    &:active{
+      color:green;
+    }
+    color:red;
+    &:hover{
+      color:blue;
+    }
+    .contain{
+      background-color:yellow;
+    }
+    &.contain{
+      background-color:yellow;
+    }
+    //跳出嵌套
+    /*默认@at-root只会跳出选择器嵌套，而不能跳出@media或@support，
+    如果要跳出这两种，则需使用@at-root (without: media)，@at-root (without: support)。
+    这个语法的关键词有四个：
+    all（表示所有），rule（表示常规css），media（表示media），support（表示support，
+    因为@support目前还无法广泛使用，所以在此不表）。我们默认的@at-root其实就是@at-root (without:rule)。*/
+    @at-root .container{
+      width:1100px;
+    }
+  }
+  //跳出媒体，
+  @media screen and (max-width: 600px) {
+    @at-root (without:media){
+      .container{
+        background-color:green;
+      }
+    }
+  }
+  //跳出媒体和常规选择器，
+  @media screen and (max-width: 600px) {
+    @at-root (without:media rule){
+      .container{
+        background-color:green;
+      }
+    }
+  }
+  //跳出复选择器
+  @at-root .text-info{
+    color:red;
+    @at-root nav &{
+      color:blue;
+    }
+  }
+}
+//继承与多继承
+.alert{
+  background-color: #FED;
+}
+.small{
+  font-size:12px;
+}
+.alert-info{
+  //@extend .alert;
+  //@extend .small;
+  //用以下方法代替
+  @extend .alert,.small;
+  color:red;
+}
+//链式继承
+.one{
+  border:solid 1px red;
+}
+.two{
+  @extend .one;
+  color:blue;
+}
+.three{
+  @extend .two;
+  border-radius:5px;
+}
+//包含选择器（.one .two)和邻兄弟选择器(.one+.two)不能继承
+
+//交叉继承 尽量避免这种用法
+a span{
+  font-weight: bold;
+}
+div .content{
+  @extend span;
+}
+//不能在媒体之外继承
+//@media screen and (max-width: 600px){
+//  .five{
+//    @extend .two;
+//  }
+//}
+@media screen and (max-width: 600px){
+  .four{color:red}
+  .five{
+    @extend .four;
+  }
+}
+//占位选择器 不会生成得到css中
+%alert{
+  color:green;
+}
+.alert-danger{
+  @extend %alert;
+}

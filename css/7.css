@@ -1,0 +1,97 @@
+body {
+  color: red;
+}
+
+body {
+  color: green;
+}
+
+span1 {
+  width: 20%;
+}
+
+span2 {
+  width: 40%;
+}
+
+span3 {
+  width: 60%;
+}
+
+span4 {
+  width: 80%;
+}
+
+span5 {
+  width: 100%;
+}
+
+.div5 {
+  width: 100%;
+}
+
+.div3 {
+  width: 60%;
+}
+
+.div1 {
+  width: 20%;
+}
+
+.section1 {
+  background-color: red;
+}
+
+.section2 {
+  background-color: blue;
+}
+
+.section3 {
+  background-color: green;
+}
+
+.section4 {
+  background-color: yellow;
+}
+
+.text-default {
+  background-color: blue;
+}
+
+.text-info {
+  background-color: green;
+}
+
+.text-danger {
+  background-color: red;
+}
+
+.label-default {
+  background-color: blue;
+}
+
+.label-info {
+  background-color: green;
+}
+
+.label-danger {
+  background-color: red;
+}
+
+.slider1 {
+  width: 20%;
+}
+
+.slider2 {
+  width: 40%;
+}
+
+.slider3 {
+  width: 60%;
+}
+
+.slider4 {
+  width: 80%;
+}
+
+/*# sourceMappingURL=7.css.map */

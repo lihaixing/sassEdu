@@ -1,0 +1,31 @@
+@charset "utf-8";
+/*sass comment*/
+//comment
+h1{
+  color:red;
+  background-color:blue;
+}
+//变量
+$color:red;
+//嵌套
+body{
+  section{
+    color:red;
+  }
+  header{
+    color:$color;
+    font-size:18px;
+  }
+}
+//函数
+@mixin alert($color:blue){
+  color:$color;
+}
+//继承
+.block{
+  padding:5px;
+  margin:10px;
+}
+p{
+  @extend .block
+}

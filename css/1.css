@@ -1,0 +1,20 @@
+/*sass comment*/
+h1 {
+  color: red;
+  background-color: blue;
+}
+
+body section {
+  color: red;
+}
+body header {
+  color: red;
+  font-size: 18px;
+}
+
+.block, p {
+  padding: 5px;
+  margin: 10px;
+}
+
+/*# sourceMappingURL=1.css.map */

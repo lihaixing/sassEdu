@@ -1,0 +1,67 @@
+@charset "utf-8";
+//if三目运算
+$screenWidth:600px;
+body{
+  color:if($screenWidth>768px,blue,red);
+}
+//if条件语句
+body{
+  @if $screenWidth>768px{
+    color:red;
+  }@else if $screenWidth<500px{
+    color:blue;
+  }@else{
+    color:green;
+  }
+}
+//for循环 through包含5，而to不包含5
+@for $i from 1 through 5{
+  span#{$i}{
+    width:20%*$i;
+  }
+}
+//while循环
+$j:5;
+@while $j>0{
+  .div#{$j}{
+    width:20%*$j;
+  }
+  $j: $j - 2;
+}
+//each常规遍历
+$k:1;
+@each $c in red blue green yellow{
+  .section#{$k}{
+    background-color:$c;
+  }
+  $k:$k+1;
+}
+//each list遍历
+@each $key,$color in (default,blue),(info,green),(danger,red){
+  .text-#{$key}{
+    background-color:$color;
+  }
+}
+//each map遍历
+@each $key,$color in (default:blue,info:green,danger:red){
+  .label-#{$key}{
+    background-color:$color;
+  }
+}
+
+
+@function screenDivide($Num){
+  $num:$Num;
+  $map:(defaultvalue:0);
+  @for $i from 1 to $num{
+    $mapValue:(#{$i}:percentage(1/$num)*$i);
+    $map:map-merge($map,$mapValue);
+  }
+  $map:map_remove($map,defaultvalue);
+  @return $map;
+}
+@each $key,$value in screenDivide(5){
+  .slider#{$key}{
+    width:$value;
+  }
+}

@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+//变量默认值，默认20px,但赋值后为18px
+$fontsize:18px;
+$fontsize:20px !default;
+p {
+  font-size: $fontsize; //18px
+}
+//多值变量
+$paddings:7px 10px 9px 8px;
+$many:(color:red,font-size:24px,border:solid 1px blue);
+.btn{
+  padding:$paddings;
+  padding-left:nth($paddings,2);
+  background-color:map_get($many,color);
+  border:map_get($many,border);
+}
+
+body{
+//局部变量，不能用在footer中
+  $color:red;
+  color:$color;
+//全局变量
+  $font-size:16px !global;
+}
+footer{
+  //color:$color;
+  font-size: $font-size;
+}
+//变量用在选择器上
+$className:main;
+.#{$className}{
+  margin:10px;
+  padding:5px;
+}
+//变量中的下划线和减号意义相同
+$text-info:blue;
+$text_info:red;
+section{
+  color:$text-info;
+}
+//sass文件的导入,以下三种方法意义相同
+//@import "part1";
+//@import "_part1";
+@import "_part1.scss";
+
+//原生css的导入
+@import "3.css";
+@import url(3.css);
+@import "http://sss/3.css";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

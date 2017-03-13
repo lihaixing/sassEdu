@@ -1,0 +1,22 @@
+.container {
+  width: 10px;
+}
+
+body {
+  color: magenta;
+  width: 500px;
+  height: 500px;
+}
+body p {
+  color: #e600e6;
+  background-color: #ff1aff;
+  z-index: 11;
+  a-index: 4;
+}
+
+p {
+  z-index: 100;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=6.css.map */

@@ -1,0 +1,102 @@
+@charset "utf-8";
+//数字类型
+$n1:1.2;
+$n2:12;
+$n3:14px;
+.body{
+  font-size:$n3;
+}
+//字符串类型
+$s1:container;
+$s2:'container';
+$s3:"container";
+.#{$s1}{
+  font-size:$n3;
+}
+//布尔类型
+$bt:true;
+$bf:false;
+//null类型
+$null:null;
+body{
+  @if($null==null){
+    color:red;
+  }
+}
+//颜色类型
+$c1:blue;
+$c2:#fff;
+$c3:rgba(255,255,0,0.5);
+body{
+  color:$c3;
+}
+//加减乘除
+$width1:12px;
+$width2:13px;
+body{
+  width:$width1+$width2;
+  .header{
+    width:$width1 -$width2;
+  }
+}
+a:before{
+  content:'A'+bc;
+}
+a:before{
+  content:A+'bc';
+}
+p{
+  padding:3px + 4px auto;
+}
+$version:3;
+p:before{
+  //使用变量的方法
+  content:'hello,sass #{$version}'
+}
+p{
+  font-size:20px/10px;
+  font-size:(20px/10px);
+  width:$width2/2;
+  height:round($width2)/2;
+}
+//引用片段
+@mixin cont{
+  color:red;
+  font-size:18px;
+}
+//函数功能，：blue可以去掉
+@mixin cont1($color:blue){
+  color:$color;
+}
+//多参数函数
+@mixin cont2($color,$font-size){
+  color:$color;
+  font-size:$font-size;
+}
+body{
+  @include cont;
+  @include cont1(green);
+  @include cont2(green,20px);
+}
+p{
+  @include cont2($font-size:good,$color:green);
+}
+//多数值函数,变量个数可变
+@mixin box-shadow($box-shadow...){
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+body{
+  @include box-shadow(2px 2px 0px blue,-2px -2px 0px green);
+}
+//内容传递
+@mixin style-for-iphone{
+  @media only screen and (max-width:768px) and (min-width:240px){
+    @content;
+  }
+}
+@include style-for-iphone{
+  font-size:24px;
+  background-color:#fff;
+}

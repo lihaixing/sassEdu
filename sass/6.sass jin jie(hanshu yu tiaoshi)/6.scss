@@ -1,0 +1,49 @@
+@charset "utf-8";
+$color:rgb(255,0,255);
+//自定义函数
+@function double($width){
+  @return $width*2;
+}
+.container{
+  width:double(5px);
+}
+body{
+  color:$color;
+  //background-color:rgba(255,255,0,0.5);
+  //border-color:rgba($color,0.5);
+  width:500px;
+  height:500px;
+  p{
+    //颜色加深函数
+    color:darken($color,5);
+    background-color:lighten($color,5);
+    z-index:str-length('hello world');
+    a-index:str-index('abcdefg','d')
+  }
+}
+//测试判断所用,控制台輸出
+//@debug 'This is a debug test';
+//@warn 'Warn';
+//@error 'Error';
+@function Three($width){
+  @if($width>3){
+    @error '$width is error';
+  }
+  @return $width*3;
+}
+body{
+  //width:Three(4);
+}
+
+@function getIndex($layer:default){
+  $zIndexMap:(default:1,modal:100,dropdown:500,grid:300);
+  $z-index:1;
+  @if map-has_key($zIndexMap,$layer) {
+    $z-index:map_get($zIndexMap,$layer);
+  }
+  @return $z-index;
+}
+p{
+  z-index:getIndex(modal);
+  z-index:getIndex(abc);
+}
